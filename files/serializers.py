@@ -19,16 +19,16 @@ class FileSerializer(serializers.ModelSerializer):
             lines = f.readlines()
             for line in lines:
                 dict_transacao = {
-                    
+                    'type':line[:1],
+                    'date':line[1:9],
+                    'valor':line[9:20],
+                    'cpf':line[20:31],
+                    'cartao':line[31:42],
+                    'time':line[42:48],
+                    'owner':line[48:62],
+                    'store':line[62:81]
                 }
-                print(line[:1]) # tipo de transação
-                print(line[1:9]) # data ocorrencia
-                print(line[9:20]) # valor 
-                print(line[20:31]) # cpf
-                print(line[31:42]) # cartao
-                print(line[42:48]) # hora
-                print(line[48:62]) # dono da loja
-                print(line[62:81]) # nome da loja
+
 
         return file
 
