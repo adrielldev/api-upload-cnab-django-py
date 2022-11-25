@@ -19,7 +19,7 @@ class Transacao(models.Model):
     ]
 
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
-    type = models.CharField(max_length=1,chocies=choices_type)
+    type = models.CharField(max_length=1,choices=choices_type,default=1)
     date = models.DateField()
     value = models.PositiveIntegerField()
     cpf = models.CharField(max_length=11)
